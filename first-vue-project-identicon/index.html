@@ -6,10 +6,10 @@
             </h3>
             <div class="io-container m-2 p-2">
                 <div class="input-div display-inline-flex m-2 p-2">
-                    <div class="input-label">
+                    <div class="input-label m-2">
                         I'm
                     </div>
-                    <div class="input-box">
+                    <div class="input-box m-2">
                         <input 
                             type="text" 
                             placeholder="MyName"
@@ -19,7 +19,9 @@
                 </div>
                 <div class="output-div display-inline-flex m-2 p-2">
                     <div class="output-label">
-                        Output
+                        <span class="m-2">
+                            {{ 'My name is ' + userName.toUpperCase() }}
+                        </span>
                     </div>
                     <div v-html="getIdenticon" class="output-img">
                     </div>
