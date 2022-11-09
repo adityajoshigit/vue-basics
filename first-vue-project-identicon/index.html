@@ -17,14 +17,13 @@
                 <div class="output-label">
                     Output
                 </div>
-                <div class="output-img">
-                    <img src="" alt="Output Image">
+                <div v-html="getIdenticon" class="output-img">
                 </div>
             </div>
         </div>
     </body>
 
-    <!-- <script src="https://cdn.jsdelivr.net/npm/jdenticon@3.2.0/dist/jdenticon.min.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/jdenticon@3.2.0/dist/jdenticon.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
     <script>
         new Vue({
@@ -35,12 +34,14 @@
             methods: {
                 onInputChange(event) {
                     const name = event.target.value;
-                    console.log('input changed to - ' + );
+                    console.log('input changed to - ' + name);
                     this.userName = name;
                 }
             },
             computed: {
-
+                getIdenticon() {
+                    return jdenticon.toSvg(this.userName, 200);
+                }
             }
         })
     </script>
